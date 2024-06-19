@@ -1,0 +1,127 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Interests</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+     <style>
+        input[type="checkbox"] {
+            width: 18px; /* Width of the checkbox */
+            height: 18px; /* Height of the checkbox */
+        }
+
+        
+
+        ul {
+            list-style-type: none;
+        }
+     </style>
+ </head>
+ <body>
+     <!-- <div class="container"> -->
+        <!-- <div class="container" style="background-color: grey; text-align: center; ">
+            <h1> Select Your Interests</h1>
+        </div> -->
+        <nav class="navbar bg-body-tertiary" style="background-color: rgb(80,80,80) !important; ">
+            <div class="container-fluid">
+              <a class="navbar-brand" style="font-size:xx-large; color: aliceblue; margin-left: 350px;"><center><b> Select Your Interest (HSC Students)</b></center></a>
+              <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+              <!-- </form> --> 
+            </div>
+          </nav>
+          <div  style="background-color: rgb(169, 165, 165);">
+         <!-- <form method="post"> -->
+            <form id="predictButton" action="{{ url_for('predict') }}" method="post">
+             {% if error %}
+             <p class="error">{{ error }}</p>
+             {% endif %}
+             <br>
+             
+             <ul style="text-align:justify; font-size: x-large; margin-left: 500px;">
+                 <li><input type="checkbox" name="interests" value="Drawing"> Drawing</li>
+                 <li><input type="checkbox" name="interests" value="Dancing"> Dancing</li>
+                 <li><input type="checkbox" name="interests" value="Singing"> Singing</li>
+                 <li><input type="checkbox" name="interests" value="Sports"> Sports</li>
+                 <li><input type="checkbox" name="interests" value="Video Game"> Video Game</li>
+                 <li><input type="checkbox" name="interests" value="Acting"> Acting</li>
+                 <li><input type="checkbox" name="interests" value="Travelling"> Travelling</li>
+                 <li><input type="checkbox" name="interests" value="Gardening"> Gardening</li>
+                 <li><input type="checkbox" name="interests" value="Animals"> Animals</li>
+                 <li><input type="checkbox" name="interests" value="Photography"> Photography</li>
+                 <li><input type="checkbox" name="interests" value="Teaching"> Teaching</li>
+                 <li><input type="checkbox" name="interests" value="Exercise"> Exercise</li>
+                 <li><input type="checkbox" name="interests" value="Coding"> Coding</li>
+                 <li><input type="checkbox" name="interests" value="Electricity Components"> Electricity Components</li>
+                 <li><input type="checkbox" name="interests" value="Mechanic Parts"> Mechanic Parts</li>
+                 <li><input type="checkbox" name="interests" value="Computer Parts"> Computer Parts</li>
+                 <li><input type="checkbox" name="interests" value="Researching"> Researching</li>
+                 <li><input type="checkbox" name="interests" value="Architecture"> Architecture</li>
+                 <li><input type="checkbox" name="interests" value="Historic Collection"> Historic Collection</li>
+                 <li><input type="checkbox" name="interests" value="Botany"> Botany</li>
+                 <li><input type="checkbox" name="interests" value="Zoology"> Zoology</li>
+                 <li><input type="checkbox" name="interests" value="Physics"> Physics</li>
+                 <li><input type="checkbox" name="interests" value="Accounting"> Accounting</li>
+                 <li><input type="checkbox" name="interests" value="Economics"> Economics</li>
+                 <li><input type="checkbox" name="interests" value="Sociology"> Sociology</li>
+                 <li><input type="checkbox" name="interests" value="Geography"> Geography</li>
+                 <li><input type="checkbox" name="interests" value="Psychology"> Psychology</li>
+                 <li><input type="checkbox" name="interests" value="History"> History</li>
+                 <li><input type="checkbox" name="interests" value="Science"> Science</li>
+                 <li><input type="checkbox" name="interests" value="Business Education"> Business Education</li>
+                 <li><input type="checkbox" name="interests" value="Chemistry"> Chemistry</li>
+                 <li><input type="checkbox" name="interests" value="Mathematics"> Mathematics</li>
+                 <li><input type="checkbox" name="interests" value="Biology"> Biology</li>
+                 <li><input type="checkbox" name="interests" value="Makeup"> Makeup</li>
+                 <li><input type="checkbox" name="interests" value="Designing"> Designing</li>
+                 <li><input type="checkbox" name="interests" value="Content writing"> Content writing</li>
+                 <li><input type="checkbox" name="interests" value="Crafting"> Crafting</li>
+                 <li><input type="checkbox" name="interests" value="Literature"> Literature</li>
+                 <li><input type="checkbox" name="interests" value="Reading"> Reading</li>
+                 <li><input type="checkbox" name="interests" value="Cartooning"> Cartooning</li>
+                 <li><input type="checkbox" name="interests" value="Debating"> Debating</li>
+                 <li><input type="checkbox" name="interests" value="Astrology"> Astrology</li>
+                 <li><input type="checkbox" name="interests" value="Hindi"> Hindi</li>
+                 <li><input type="checkbox" name="interests" value="French"> French</li>
+                 <li><input type="checkbox" name="interests" value="English"> English</li>
+                 <li><input type="checkbox" name="interests" value="Other Language"> Other Language</li>
+                 <li><input type="checkbox" name="interests" value="Solving Puzzles"> Solving Puzzles</li>
+                 <li><input type="checkbox" name="interests" value="Gymnastics"> Gymnastics</li>
+                 <li><input type="checkbox" name="interests" value="Yoga"> Yoga</li>
+                 <li><input type="checkbox" name="interests" value="Engineering"> Engineering</li>
+                 <li><input type="checkbox" name="interests" value="Doctor"> Doctor</li>
+                 <li><input type="checkbox" name="interests" value="Pharmacist"> Pharmacist</li>
+                 <li><input type="checkbox" name="interests" value="Cycling"> Cycling</li>
+                 <li><input type="checkbox" name="interests" value="Knitting"> Knitting</li>
+                 <li><input type="checkbox" name="interests" value="Director"> Director</li>
+                 <li><input type="checkbox" name="interests" value="Journalism"> Journalism</li>
+                 <li><input type="checkbox" name="interests" value="Business"> Business</li>
+                 <li><input type="checkbox" name="interests" value="Listening Music"> Listening Music</li>
+             </ul>
+             <button type="submit" class="btn btn-light" style="margin-left: 550px; font-size: x-large;">Predict</button>
+         </form>
+
+     </div>
+     <script>
+        document.getElementById("predictButton").addEventListener("click", function(event) {
+            var checkboxes = document.querySelectorAll('input[name="interests"]:checked');
+            if (checkboxes.length < 1) {
+                event.preventDefault(); // Prevent form submission
+                alert("Please select at least one interest.");
+                return false;
+            }
+            // If validation passes, form submission proceeds
+        });
+    </script>
+    
+    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ </body>
+ </html>
+ 
+ 

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+       input[type="checkbox"] {
+           width: 18px; /* Width of the checkbox */
+           height: 18px; /* Height of the checkbox */
+       }
+
+       
+
+       ul {
+           list-style-type: none;
+       }
+    </style>
+</head>
+<body>
+    <!-- <div class="container"> -->
+       <!-- <div class="container" style="background-color: grey; text-align: center; ">
+           <h1> Select Your Interests</h1>
+       </div> -->
+       <nav class="navbar bg-body-tertiary" style="background-color: rgb(80,80,80) !important; ">
+           <div class="container-fluid">
+             <a class="navbar-brand" style="font-size:xx-large; color: aliceblue; margin-left: 350px;"><center><b> Select Your Interest (Job Role Prediction)</b></center></a>
+             <!-- <form class="d-flex" role="search">
+               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+               <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+             <!-- </form> --> 
+           </div>
+         </nav>
+         <div  style="background-color: rgb(169, 165, 165);">
+        <!-- <form method="post"> -->
+           <form id="predictButton" action="{{ url_for('predict') }}" method="post">
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            <br>
+            
+            <ul style="text-align:justify; font-size: x-large; margin-left: 500px;">
+                <li><input type="checkbox" name="interests" value="Database Fundamentals"> Database Fundamentals</li>
+                <li><input type="checkbox" name="interests" value="Computer Architecture"> Computer Architecture</li>
+                <li><input type="checkbox" name="interests" value="Distributed Computing Systems"> Distributed Computing Systems</li>
+                <li><input type="checkbox" name="interests" value="Cyber Security"> Cyber Security</li>
+                <li><input type="checkbox" name="interests" value="Networking"> Networking</li>
+                <li><input type="checkbox" name="interests" value="Software Development"> Software Development</li>
+                <li><input type="checkbox" name="interests" value="Programming Skills"> Programming Skills</li>
+                <li><input type="checkbox" name="interests" value="Project Management"> Project Management</li>
+                <li><input type="checkbox" name="interests" value="Computer Forensics Fundamentals"> Computer Forensics Fundamentals</li>
+                <li><input type="checkbox" name="interests" value="Technical Communication"> Technical Communication</li>
+                <li><input type="checkbox" name="interests" value="AI ML"> AI ML</li>
+                <li><input type="checkbox" name="interests" value="Software Engineering"> Software Engineering</li>
+                <li><input type="checkbox" name="interests" value="Business Analysis"> Business Analysis</li>
+                <li><input type="checkbox" name="interests" value="Communication skills"> Communication skills</li>
+                <li><input type="checkbox" name="interests" value="Data Science"> Data Science</li>
+                <li><input type="checkbox" name="interests" value="Troubleshooting skills"> Troubleshooting skills</li>
+                <li><input type="checkbox" name="interests" value="Graphics Designing"> Graphics Designing</li>
+                
+                
+            </ul>
+            <button type="submit" class="btn btn-light" style="margin-left: 550px; font-size: x-large;">Predict</button>
+        </form>
+
+    </div>
+    <script>
+       document.getElementById("predictButton").addEventListener("click", function(event) {
+           var checkboxes = document.querySelectorAll('input[name="interests"]:checked');
+           if (checkboxes.length < 1) {
+               event.preventDefault(); // Prevent form submission
+               alert("Please select at least one interest.");
+               return false;
+           }
+           // If validation passes, form submission proceeds
+       });
+   </script>
+   
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+

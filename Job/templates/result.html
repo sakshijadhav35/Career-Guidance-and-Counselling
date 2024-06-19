@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+    .result-container {
+    
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 30px;
+}
+
+.result-text {
+    font-size: xx-large;
+    color: rgb(86, 82, 82);
+}
+
+    </style>
+</head>
+<body style="background-color: rgb(159, 155, 155);">
+    <nav class="navbar bg-body-tertiary" style="background-color: rgb(80,80,80) !important; ">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-size:xx-large; color: aliceblue; margin-left: 450px;"><b>Job Role Prediction Result</b></a>
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+          <!-- </form> --> 
+        </div>
+      </nav>
+    <div class="container" style="">
+        <!-- <h1>Course Prediction Result</h1> -->
+        <div class="result container ">
+            <p style="font-size: xx-large; color: aliceblue; text-align: center; margin-top: 50px;"><b>PREDICTED JOB ROLE</b></p>
+        </div>
+
+        <!-- <div class="result container" >
+            <p style="font-size: xx-large; color: aliceblue; text-align: center; margin-top: 50px;">
+            {{ predicted_course }}
+        </p>
+        </div> -->
+
+        <div class="result-container">
+            <b><a href="knowledge.html" <p class="result-text">{{ predicted_course }}</p></b>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
